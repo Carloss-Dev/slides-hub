@@ -10,13 +10,14 @@
     "ignore": ["node_modules", "dist", "build"]
   },
   "formatter": {
-    "enabled": false
+    "enabled": true
   },
   "organizeImports": {
-    "enabled": true
+    "enabled": false
   },
   "linter": {
     "enabled": true,
+    "ignore": ["node_modules/**/*", "**/node_modules/**/*"],
     "rules": {
       "recommended": true,
       "correctness": {

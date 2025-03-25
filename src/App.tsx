@@ -1,11 +1,8 @@
-import { Slide } from "./components/slide";
+import AppRoutes from "./routes/app.routes";
+import "./index.css";
 
 function App() {
-  return (
-    <main className="h-dvh w-dvw">
-      <Slide />
-    </main>
-  );
+  return <AppRoutes />;
 }
 
 export default App;

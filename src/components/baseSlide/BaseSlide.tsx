@@ -1,25 +1,25 @@
-// App.tsx
 import React from "react";
 import Reveal from "reveal.js";
 import "reveal.js/dist/reveal.css";
 import "reveal.js/dist/theme/black.css";
 
-export function Slide() {
-  const deckDivRef = React.useRef<HTMLDivElement>(null); // reference to deck container div
-  const deckRef = React.useRef<Reveal.Api | null>(null); // reference to deck reveal instance
+interface IPropsBaseSlide {
+  children: React.ReactNode;
+}
+
+const BaseSlide = ({ children }: IPropsBaseSlide) => {
+  const deckDivRef = React.useRef<HTMLDivElement>(null);
+  const deckRef = React.useRef<Reveal.Api | null>(null);
 
   React.useEffect(() => {
-    // Prevents double initialization in strict mode
     if (deckRef.current) return;
 
     if (deckDivRef.current) {
       deckRef.current = new Reveal(deckDivRef.current, {
         transition: "slide",
-        // other config options
+        embedded: true,
       });
-      deckRef.current.initialize().then(() => {
-        // good place for event handlers and plugin setups
-      });
+      deckRef.current.initialize().then(() => {});
     }
 
     return () => {
@@ -37,12 +37,9 @@ export function Slide() {
 
   return (
     <div className="reveal" ref={deckDivRef}>
-      <div className="slides">
-        <section>
-          aoidhoasiuhdasioudui9oasdhasuio9dias asoidhuiopsadas aodkashpiudas
-        </section>
-        <section>Slide 2</section>
-      </div>
+      <div className="slides">{children}</div>
     </div>
   );
-}
+};
+
+export default BaseSlide;
