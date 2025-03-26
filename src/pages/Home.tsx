@@ -1,5 +1,4 @@
 import Header from "@/components/layout/Header";
-import SlideCard from "@/components/slideCard/SlideCard";
 import { Container } from "@chakra-ui/react";
 
 const Home = () => {

@@ -30,23 +30,26 @@ const Navbar = () => {
         <Portal>
           <Menu.Positioner>
             <Menu.Content>
-              {routesSchema.map((route) => (
-                <Menu.Item
-                  key={route.label}
-                  value={route.label}
-                  asChild
-                  fontWeight="bold"
-                  letterSpacing="tight"
-                  color="gray.100"
-                  cursor="pointer"
-                  rounded="md"
-                  _selected={{
-                    color: "gray.900",
-                  }}
-                >
-                  <Link to={route.path}>{route.label}</Link>
-                </Menu.Item>
-              ))}
+              {routesSchema.map(
+                (route) =>
+                  !route.slide && (
+                    <Menu.Item
+                      key={route.label}
+                      value={route.label}
+                      asChild
+                      fontWeight="bold"
+                      letterSpacing="tight"
+                      color="gray.100"
+                      cursor="pointer"
+                      rounded="md"
+                      _selected={{
+                        color: "gray.900",
+                      }}
+                    >
+                      <Link to={route.path}>{route.label}</Link>
+                    </Menu.Item>
+                  )
+              )}
             </Menu.Content>
           </Menu.Positioner>
         </Portal>
@@ -60,24 +63,27 @@ const Navbar = () => {
         fitted
         defaultValue={pathname}
         width="20rem"
-        display={{ base: "none", md: "block" }} // Vai esconder em telas pequenas (base) e mostrar a partir de 'md'
+        display={{ base: "none", md: "block" }}
       >
         <Tabs.List bg="gray.800" gap="2" p="1.5" rounded="md">
-          {routesSchema.map((route) => (
-            <Tabs.Trigger
-              key={route.label}
-              value={route.path}
-              fontWeight="bold"
-              letterSpacing="tight"
-              color="gray.100"
-              asChild
-              _selected={{
-                color: "gray.900",
-              }}
-            >
-              <Link to={route.path}>{route.label}</Link>
-            </Tabs.Trigger>
-          ))}
+          {routesSchema.map(
+            (route) =>
+              !route.slide && (
+                <Tabs.Trigger
+                  key={route.label}
+                  value={route.path}
+                  fontWeight="bold"
+                  letterSpacing="tight"
+                  color="gray.100"
+                  asChild
+                  _selected={{
+                    color: "gray.900",
+                  }}
+                >
+                  <Link to={route.path}>{route.label}</Link>
+                </Tabs.Trigger>
+              )
+          )}
           <Tabs.Indicator
             rounded="l2"
             bg="cyan.400"
