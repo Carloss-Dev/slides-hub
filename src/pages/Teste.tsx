@@ -1,13 +1,14 @@
-import Header from "@/components/layout/Header";
-import { Container } from "@chakra-ui/react";
+import BaseSlide from "@/components/baseSlide/BaseSlide";
+import React from "react";
 
 const Teste = () => {
   return (
     <>
-      <Header />
-      <Container as="main" height="100rem" paddingTop="5">
-        Testeeeee
-      </Container>
+      <BaseSlide>
+        <section>slide 1</section>
+        <section>slide 1</section>
+        <section>slide 1</section>
+      </BaseSlide>
     </>
   );
 };

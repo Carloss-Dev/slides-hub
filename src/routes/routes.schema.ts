@@ -6,6 +6,7 @@ interface IRoutesSchema {
   path: string;
   label: string;
   element: React.ElementType;
+  slide: boolean;
 }
 
 export const routesSchema: IRoutesSchema[] = [
@@ -13,10 +14,6 @@ export const routesSchema: IRoutesSchema[] = [
     label: "Home",
     path: "/",
     element: Home,
-  },
-  {
-    label: "teste",
-    path: "/teste",
-    element: Teste,
+    slide: false,
   },
 ];
