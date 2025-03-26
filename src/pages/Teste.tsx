@@ -1,5 +1,4 @@
 import BaseSlide from "@/components/baseSlide/BaseSlide";
-import React from "react";
 
 const Teste = () => {
   return (
