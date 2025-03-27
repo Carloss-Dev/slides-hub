@@ -1,7 +1,7 @@
-import { ISlideCardProps } from "@/components/slideCard/SlideCard";
+import type { ISlideCardProps } from "@/components/slideCard/SlideCard";
 import Home from "@/pages/Home";
 import Teste from "@/pages/Teste";
-import React from "react";
+import type React from "react";
 
 interface ISlideCardBase {
   isSlide: boolean;
