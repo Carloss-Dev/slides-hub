@@ -32,10 +32,10 @@ const Navbar = () => {
             <Menu.Content>
               {routesSchema.map(
                 (route) =>
-                  !route.slide && (
+                  !route.slide.isSlide && (
                     <Menu.Item
                       key={route.label}
-                      value={route.label}
+                      value={route.path}
                       asChild
                       fontWeight="bold"
                       letterSpacing="tight"
@@ -68,7 +68,7 @@ const Navbar = () => {
         <Tabs.List bg="gray.800" gap="2" p="1.5" rounded="md">
           {routesSchema.map(
             (route) =>
-              !route.slide && (
+              !route.slide.isSlide && (
                 <Tabs.Trigger
                   key={route.label}
                   value={route.path}

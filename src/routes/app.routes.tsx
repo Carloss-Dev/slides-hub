@@ -11,7 +11,7 @@ function AppRoutes() {
             key={route.path}
             path={route.path}
             element={
-              route.slide ? (
+              route.slide.isSlide ? (
                 <main style={{ width: "100vw", height: "100vh" }}>
                   {React.createElement(route.element)}
                 </main>
