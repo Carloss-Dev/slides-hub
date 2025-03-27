@@ -1,24 +1,16 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { routesSchema } from "./routes.schema";
 import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { baseRoutesSchema } from "./base.schema.routes";
 
 function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-        {routesSchema.map((route) => (
+        {baseRoutesSchema.map((route) => (
           <Route
             key={route.path}
             path={route.path}
-            element={
-              route.slide.isSlide ? (
-                <main style={{ width: "100vw", height: "100vh" }}>
-                  {React.createElement(route.element)}
-                </main>
-              ) : (
-                React.createElement(route.element)
-              )
-            }
+            element={React.createElement(route.element)}
           />
         ))}
       </Routes>

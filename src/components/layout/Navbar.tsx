@@ -1,4 +1,4 @@
-import { routesSchema } from "@/routes/routes.schema";
+import { baseRoutesSchema } from "@/routes/base.schema.routes";
 import { IconButton, Menu, Portal, Tabs } from "@chakra-ui/react";
 import { TfiMenuAlt } from "react-icons/tfi";
 import { Link, useLocation } from "react-router-dom";
@@ -30,26 +30,23 @@ const Navbar = () => {
         <Portal>
           <Menu.Positioner>
             <Menu.Content>
-              {routesSchema.map(
-                (route) =>
-                  !route.slide.isSlide && (
-                    <Menu.Item
-                      key={route.label}
-                      value={route.path}
-                      asChild
-                      fontWeight="bold"
-                      letterSpacing="tight"
-                      color="gray.100"
-                      cursor="pointer"
-                      rounded="md"
-                      _selected={{
-                        color: "gray.900",
-                      }}
-                    >
-                      <Link to={route.path}>{route.label}</Link>
-                    </Menu.Item>
-                  )
-              )}
+              {baseRoutesSchema.map((route) => (
+                <Menu.Item
+                  key={route.label}
+                  value={route.path}
+                  asChild
+                  fontWeight="bold"
+                  letterSpacing="tight"
+                  color="gray.100"
+                  cursor="pointer"
+                  rounded="md"
+                  _selected={{
+                    color: "gray.900",
+                  }}
+                >
+                  <Link to={route.path}>{route.label}</Link>
+                </Menu.Item>
+              ))}
             </Menu.Content>
           </Menu.Positioner>
         </Portal>
@@ -66,24 +63,21 @@ const Navbar = () => {
         display={{ base: "none", md: "block" }}
       >
         <Tabs.List bg="gray.800" gap="2" p="1.5" rounded="md">
-          {routesSchema.map(
-            (route) =>
-              !route.slide.isSlide && (
-                <Tabs.Trigger
-                  key={route.label}
-                  value={route.path}
-                  fontWeight="bold"
-                  letterSpacing="tight"
-                  color="gray.100"
-                  asChild
-                  _selected={{
-                    color: "gray.900",
-                  }}
-                >
-                  <Link to={route.path}>{route.label}</Link>
-                </Tabs.Trigger>
-              )
-          )}
+          {baseRoutesSchema.map((route) => (
+            <Tabs.Trigger
+              key={route.label}
+              value={route.path}
+              fontWeight="bold"
+              letterSpacing="tight"
+              color="gray.100"
+              asChild
+              _selected={{
+                color: "gray.900",
+              }}
+            >
+              <Link to={route.path}>{route.label}</Link>
+            </Tabs.Trigger>
+          ))}
           <Tabs.Indicator
             rounded="l2"
             bg="cyan.400"
