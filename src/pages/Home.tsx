@@ -1,4 +1,6 @@
 import Header from "@/components/layout/Header";
+import SlideCard from "@/components/slideCard/SlideCard";
+import { routesSchema } from "@/routes/routes.schema";
 import { Container } from "@chakra-ui/react";
 
 const Home = () => {
@@ -12,7 +14,23 @@ const Home = () => {
         justifyContent="space-around"
         flexWrap="wrap"
         gap="3"
-      ></Container>
+        margin="0"
+        maxW="100vw"
+      >
+        {routesSchema.map(
+          ({ slide }) =>
+            slide.isSlide && (
+              <SlideCard
+                date={slide.date}
+                description={slide.description}
+                link={slide.link}
+                prevSlide={slide.prevSlide}
+                title={slide.title}
+                key={slide.link.path}
+              />
+            )
+        )}
+      </Container>
     </>
   );
 };

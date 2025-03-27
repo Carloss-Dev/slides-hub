@@ -1,5 +1,5 @@
 import { Box, Button, Card, Text } from "@chakra-ui/react";
-import type React from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 interface ILinkCard {
@@ -7,8 +7,8 @@ interface ILinkCard {
   label: string;
 }
 
-interface ISlideCardProps {
-  prevSlide: React.ReactNode;
+export interface ISlideCardProps {
+  prevSlide: React.ElementType;
   title: string;
   description: string;
   date: string;
@@ -24,7 +24,7 @@ const SlideCard = ({
 }: ISlideCardProps) => {
   return (
     <Card.Root maxW="sm" overflow="hidden">
-      <Box h="15rem">{prevSlide}</Box>
+      <Box h="15rem">{React.createElement(prevSlide)}</Box>
       <Card.Body gap="2">
         <Card.Title>{title}</Card.Title>
         <Card.Description>{description}</Card.Description>

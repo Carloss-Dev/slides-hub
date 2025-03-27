@@ -12,6 +12,8 @@ const Header = () => {
       alignItems="center"
       position="sticky"
       top="0"
+      margin="0"
+      maxW="100vw"
       zIndex="docked"
       bg="gray.900"
     >
