@@ -17,6 +17,6 @@ export const slideData: ISlideData[] = [
       label: "Ir para o slide",
       path: "/house/youtube/introducao-html",
     },
-    badge: "Youtube",
+    tags: ["Youtube", "Html"],
   },
 ];

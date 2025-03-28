@@ -3,9 +3,8 @@ import { Box, Button, Card, Tag, Text } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
 
-type TBadges = "Youtube";
+type TTags = "Youtube" | "Html";
 
-type TBadgesColors = "gra";
 interface ILinkCard {
   path: string;
   label: string;
@@ -17,7 +16,7 @@ export interface ISlideCardProps {
   description: string;
   date: string;
   link: ILinkCard;
-  badge: TBadges;
+  tags: TTags[];
 }
 
 const SlideCard = ({
@@ -26,10 +25,10 @@ const SlideCard = ({
   description,
   date,
   link,
-  badge,
+  tags,
 }: ISlideCardProps) => {
-  function renderBadgeColor(badgeValue: TBadges): string {
-    let badgeColor:
+  function renderBadgeColor(tagValue: TTags): string {
+    let tagColor:
       | "gray"
       | "red"
       | "green"
@@ -41,12 +40,15 @@ const SlideCard = ({
       | "orange"
       | "yellow" = "gray";
 
-    switch (badgeValue) {
+    switch (tagValue) {
       case "Youtube":
-        badgeColor = "red";
-        return badgeColor;
+        tagColor = "red";
+        return tagColor;
+      case "Html":
+        tagColor = "orange";
+        return tagColor;
       default:
-        return badgeColor;
+        return tagColor;
     }
   }
 
@@ -64,15 +66,21 @@ const SlideCard = ({
         </Text>
 
         {/* Exibindo a badge */}
-        <Tag.Root
-          colorScheme="teal"
-          size="sm"
-          mt="2"
-          w="fit-content"
-          colorPalette={renderBadgeColor(badge)}
-        >
-          <Tag.Label p="1"> {badge}</Tag.Label>
-        </Tag.Root>
+
+        <Box display="flex" gap="2" flexWrap="wrap">
+          {tags.map((tag) => (
+            <Tag.Root
+              key={tag}
+              colorScheme="teal"
+              size="sm"
+              mt="2"
+              w="fit-content"
+              colorPalette={renderBadgeColor(tag)}
+            >
+              <Tag.Label p="1"> {tag}</Tag.Label>
+            </Tag.Root>
+          ))}
+        </Box>
       </Card.Body>
       <Card.Footer gap="2">
         <Button

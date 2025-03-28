@@ -1,10 +1,13 @@
 import BaseSlide from "@/components/baseSlide/BaseSlide";
+import { Box } from "@chakra-ui/react";
 
 const IntroducaoHTML = () => {
   return (
     <BaseSlide>
-      <section>1aobaaa</section>
-      <section>1aobaaa2222</section>
+      <Box as="section">Aoba</Box>
+      <Box as="section">Aoba</Box>
+      <Box as="section">Aoba</Box>
+      <Box as="section">Aoba</Box>
     </BaseSlide>
   );
 };
