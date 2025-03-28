@@ -1,4 +1,6 @@
 import Header from "@/components/layout/Header";
+import SlideCard from "@/components/slideCard/SlideCard";
+import { slideData } from "@/data/houseJS/slides.data";
 import { Container } from "@chakra-ui/react";
 
 const HouseJSPage = () => {
@@ -14,7 +16,11 @@ const HouseJSPage = () => {
         gap="3"
         margin="0"
         maxW="100vw"
-      ></Container>
+      >
+        {slideData.map(({ id, ...slide }) => (
+          <SlideCard key={id} {...slide} />
+        ))}
+      </Container>
     </>
   );
 };
