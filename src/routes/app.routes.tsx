@@ -3,16 +3,25 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { baseRoutesSchema } from "./base.schema.routes";
 import { slideRoutesSchema } from "./slides.schema.routes";
 
-function AppRoutes() {
+const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
         {baseRoutesSchema.map((route) => (
-          <Route
-            key={route.path}
-            path={route.path}
-            element={React.createElement(route.element)}
-          />
+          <React.Fragment key={route.path}>
+            <Route
+              path={route.path}
+              element={React.createElement(route.element)}
+            />
+
+            {route.subroutes?.map((subroute) => (
+              <Route
+                key={subroute.path}
+                path={subroute.path}
+                element={React.createElement(subroute.element)}
+              />
+            ))}
+          </React.Fragment>
         ))}
 
         {slideRoutesSchema.map((route) => (
@@ -29,6 +38,6 @@ function AppRoutes() {
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default AppRoutes;
