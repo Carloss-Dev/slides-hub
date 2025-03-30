@@ -2,7 +2,7 @@
   "name": "slide-hub",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://Carloss-Dev.github.io/slide-hub",
+  "homepage": "https://Carloss-Dev.github.io/slides-hub",
   "type": "module",
   "scripts": {
     "dev": "vite",
