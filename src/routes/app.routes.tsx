@@ -5,7 +5,7 @@ import { slideRoutesSchema } from "./slides.schema.routes";
 
 const AppRoutes = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/slides-hub">
       <Routes>
         {baseRoutesSchema.map((route) => (
           <React.Fragment key={route.path}>
