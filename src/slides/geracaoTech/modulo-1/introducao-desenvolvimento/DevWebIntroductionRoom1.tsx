@@ -19,7 +19,7 @@ const DevWebIntroductionRoom1 = () => {
   ];
 
   const howAreTheRooms = [
-    "Teória",
+    "Teoria",
     "Exemplos",
     "Prática",
     "Mais prática",
