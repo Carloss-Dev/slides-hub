@@ -1,6 +1,8 @@
 import BaseSlide from "@/components/baseSlide/BaseSlide";
 import WhoIAm from "@/components/slideWhoIAm/WhoIAm";
 import { Box, Heading } from "@chakra-ui/react";
+import picapau from "@/assets/picapau-biruta.jpg";
+import logoGT from "@/assets/logo-gt.png";
 
 const DevWebIntroductionRoom1 = () => {
   const aboutTheCourseTopics = [
@@ -56,7 +58,7 @@ const DevWebIntroductionRoom1 = () => {
           <li className="flex w-full items-center justify-center">
             <Box w="10rem" as="div">
               <img
-                src="/logo-gt.png"
+                src={logoGT}
                 alt=""
                 width="100%"
                 className="animate-spin-2"
@@ -203,7 +205,7 @@ const DevWebIntroductionRoom1 = () => {
         </Heading>
       </section>
       <section className="place-items-center">
-        <img src="/picapau-biruta.jpg" alt="" />
+        <img src={picapau} alt="picapau" />
       </section>
       <section>
         <Heading

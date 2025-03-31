@@ -1,4 +1,5 @@
 import { Box, Heading } from "@chakra-ui/react";
+import fotoPadrao from "@/assets/foto-padrao.jpg";
 
 const WhoIAm = () => {
   const topics = [
@@ -33,7 +34,9 @@ const WhoIAm = () => {
       <section data-vertical-align-top>
         <Box as="div" w="100%" h="100%" display="flex" gap="10">
           <Box>
-            <Heading as="h3">Carlos Eduardo</Heading>
+            <Heading as="h3" className="fragment">
+              Carlos Eduardo
+            </Heading>
             <ul>
               {topics.map((topic) => (
                 <Box
@@ -49,7 +52,7 @@ const WhoIAm = () => {
             </ul>
           </Box>
           <Box w="20rem">
-            <img src="/foto-padrao.jpg" alt="" width="100%" />
+            <img src={fotoPadrao} alt="Foto de perfil" width="100%" />
           </Box>
         </Box>
       </section>
