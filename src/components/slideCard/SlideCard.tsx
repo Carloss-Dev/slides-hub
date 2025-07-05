@@ -57,7 +57,13 @@ const SlideCard = ({
   }
 
   return (
-    <Card.Root maxW="sm" overflow="hidden" boxShadow="md" borderRadius="lg">
+    <Card.Root
+      maxW="sm"
+      w="10/12"
+      overflow="hidden"
+      boxShadow="md"
+      borderRadius="lg"
+    >
       <Box h="15rem">{React.createElement(prevSlide)}</Box>
       <Card.Body gap="2">
         <Card.Title fontSize="lg" fontWeight="bold">
