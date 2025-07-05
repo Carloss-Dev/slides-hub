@@ -1,3 +1,4 @@
+import { BootCampApresentationSlide } from "@/slides/apresentacoes/bootcamp";
 import JQueryApresentationSlide from "@/slides/apresentacoes/jquery";
 import { DevWebIntroductionRoom1 } from "@/slides/geracaoTech";
 import type React from "react";
@@ -17,4 +18,8 @@ export const slideRoutesSchema: ISlideRoutesSchema[] = [
     path: "/apresentacoes/jquery",
     element: JQueryApresentationSlide,
   },
+  {
+    path: "/apresentacoes/bootcamp",
+    element: BootCampApresentationSlide
+  }
 ];
